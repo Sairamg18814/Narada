@@ -3,15 +3,16 @@ requires = ["setuptools>=64"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "narada"
+name = "agentic-seek"
 version = "0.1.0"
-authors = [{name = "Narada Team"}]
-description = "Local reasoning assistant"
+authors = [{name = "AgenticSeek Team"}]
+description = "Offline reasoning assistant"
 readme = "README.md"
 requires-python = ">=3.10"
 dependencies = []
+
 [project.optional-dependencies]
 dev = ["pytest", "flake8", "pydoc-markdown"]
 
 [project.scripts]
-narada = "narada:run_cli"
+agentic-seek = "agentic_seek:run_cli"
