@@ -18,6 +18,12 @@ agentic-seek plan "draft meeting agenda" --notify
 agentic-seek codex "show an example of a python loop"
 ```
 
+Optional desktop notifications require the `pync` Python package:
+
+```bash
+pip install pync
+```
+
 Place a quantized Llama model in `models/llama.bin` or set the environment
 variable `AGENTIC_SEEK_MODEL` to the model path. A helper script is provided
 in `scripts/setup_local_llm.sh`.

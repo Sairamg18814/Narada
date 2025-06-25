@@ -13,6 +13,7 @@ dependencies = []
 
 [project.optional-dependencies]
 dev = ["pytest", "flake8", "pydoc-markdown"]
+mac = ["pync"]
 
 [project.scripts]
 agentic-seek = "agentic_seek:run_cli"

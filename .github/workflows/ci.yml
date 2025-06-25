@@ -15,7 +15,7 @@ jobs:
           python-version: '3.11'
       - name: Install dependencies
         run: |
-          brew install pync
+          python -m pip install pync
           python -m pip install -e .[dev]
       - name: Lint
         run: |
