@@ -1,35 +1,42 @@
-![CI](https://github.com/yourname/narada/actions/workflows/ci.yml/badge.svg)
-# narada
+# AgenticSeek
 
-```
- _   _              _
-| \ | |            | |
-|  \| | __ _ _ __  | |__   __ _ _ __
-| . ` |/ _` | '_ \ | '_ \ / _` | '__|
-| |\  | (_| | | | || | | | (_| | |
-\_| \_/\__,_|_| |_||_| |_|\__,_|_|
-```
-
-Narada is a local reasoning assistant reimagined from open-source roots. It runs entirely offline and integrates with macOS for notifications.
+AgenticSeek is a fully offline reasoning assistant rewritten from scratch.
+It runs natively on macOS with Apple Silicon acceleration and provides an
+interactive Codex-like code helper. The project avoids external APIs by using
+local language models via `llama-cpp-python`.
 
 ## Quickstart on macOS
 
 ```bash
-brew install --file Brewfile
-scripts/install.sh
-narada "draft meeting agenda" --notify
+# install brew packages and Python dependencies
+make install
+
+# run a simple planning task
+agentic-seek plan "draft meeting agenda" --notify
+
+# ask the Codex assistant
+agentic-seek codex "show an example of a python loop"
 ```
 
-## Developer Guide
+Place a quantized Llama model in `models/llama.bin` or set the environment
+variable `AGENTIC_SEEK_MODEL` to the model path. A helper script is provided
+in `scripts/setup_local_llm.sh`.
 
-- **src/**: source code
-- **tests/**: pytest suite
-- **docs/**: design docs
-- **scripts/**: helper scripts
+## Repository Layout
 
-Run tests with `pytest`.
+- `src/agentic_seek/` – core modules
+- `models/` – location for local LLM files
+- `tests/` – unit tests runnable with `make test`
+- `scripts/` – installation helpers
 
-## Contributing
+## Development
 
-Please see `CODE_OF_CONDUCT.md` and `CONTRIBUTING.md` for guidelines.
+Run tests and measure coverage:
 
+```bash
+make test
+```
+
+## License
+
+This project is released under the MIT License.
